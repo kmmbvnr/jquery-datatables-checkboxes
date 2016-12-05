@@ -152,7 +152,7 @@ Checkboxes.prototype = {
 
             if(ctx.aoColumns[i].mRender === null){
                colOptions['render'] = function(){
-                  return '<input type="checkbox" class="dt-checkboxes">';
+                  return '<label><input type="checkbox" class="filled-in dt-checkboxes"><span></span><label>';
                };
             }
 
@@ -295,6 +295,7 @@ Checkboxes.prototype = {
          });
 
          // Handle click on "Select all" control
+         // kmmbvnr: TODO ??
          $tableContainer.on('click.dtCheckboxes', 'thead th.dt-checkboxes-select-all input[type="checkbox"]', function(e){
             self.onClickSelectAll(e, this);
          });
@@ -901,7 +902,7 @@ Checkboxes.defaults = {
     * @type {mixed}
     * @default `<input type="checkbox">`
     */
-   selectAllRender: '<input type="checkbox">'
+   selectAllRender: '<label><input type="checkbox" class="filled-in"><span></span></label>'
 };
 
 
